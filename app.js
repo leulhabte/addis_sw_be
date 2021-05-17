@@ -1,11 +1,14 @@
 const express = require('express');
 const employee = require('./api/routes/employee')
+const cors = require('cors')
+
 
 // initializing express
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
+app.use(cors())
 
 app.use('/api/employee', employee);
 
